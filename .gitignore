@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+ignore/
+.env
+artifacts/
+.playwright-mcp/
+CLAUDE.md
+.claude/

@@ -1,0 +1,9 @@
+{
+  "incident_id": "LAB-042",
+  "symptom": "The portal can't load inventory after the 14:00 deployment.",
+  "dns": {"evidence_id": "DNS-01", "source": "authored DNS fixture, not a live DNS lookup", "portal.lab": "127.0.0.1", "inventory.lab": "127.0.0.1"},
+  "logs": {"evidence_id": "LOG-01", "source": "authored historical log fixture", "entries": ["13:59 inventory requests succeeded", "14:01 portal inventory requests began failing with upstream HTTP 410"]},
+  "deployment": {"evidence_id": "DEPLOY-01", "source": "authored deployment fixture", "time": "14:00", "revision": "r42", "diff": {"INVENTORY_BASE_URL": {"before": "/inventory/v2", "after": "/inventory/v1"}}},
+  "rollback": {"evidence_id": "DEPLOY-02", "source": "authored deployment fixture", "time": "14:20", "revision": "r43", "diff": {"INVENTORY_BASE_URL": {"before": "/inventory/v1", "after": "/inventory/v2"}}},
+  "rollback_log": "14:21 portal inventory requests succeeded"
+}

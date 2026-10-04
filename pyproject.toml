@@ -1,0 +1,16 @@
+[project]
+name = "labeveryday-agent-incident-lab"
+version = "0.1.0"
+description = "Debug a multi-agent incident investigation with Honeycomb"
+requires-python = ">=3.12"
+dependencies = [
+  "pydantic-ai-slim[anthropic]==2.53.0",
+  "opentelemetry-sdk==1.45.0",
+  "opentelemetry-exporter-otlp-proto-http==1.45.0",
+  "python-dotenv==1.2.4",
+]
+[dependency-groups]
+dev = ["pytest==9.1.1", "pytest-asyncio==1.4.0"]
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["."]
